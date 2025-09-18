@@ -5,7 +5,7 @@ format:
   html: default
   pdf: default
 execute:
-  echo: true
+  echo: false
   eval: true
 ---
 
@@ -97,7 +97,7 @@ $$E[Balance] = 0.5 \times \$1,500 + 0.5 \times \$600 = \$750 + \$300 = \$1,050$$
 ```{r}
 #| label: expected-value-r
 #| fig-cap: R calculation of expected value after 1 coin flip
-#| echo: true
+#| echo: false
 
 # Game parameters
 initial_balance <- 1000
@@ -128,7 +128,7 @@ cat("Expected Gain/Loss: $", expected_value - initial_balance, "\n")
 ```{python}
 #| label: expected-value-python
 #| fig-cap: Python calculation of expected value after 1 coin flip
-#| echo: true
+#| echo: false
 
 import numpy as np
 
@@ -198,7 +198,7 @@ This is a **favorable game** from an expected value perspective. Even though you
 ```{r}
 #| label: single-simulation-r
 #| fig-cap: R single simulation of investment game over 37 years
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
@@ -293,7 +293,7 @@ cat("Years with losses: ", sum(diff(simulation_data$balance) < 0), "\n")
 ```{python}
 #| label: single-simulation-python
 #| fig-cap: Python single simulation of investment game over 37 years
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -411,7 +411,7 @@ This single simulation demonstrates the **high-risk, high-volatility nature** of
 ```{r}
 #| label: multiple-simulations-r
 #| fig-cap: R distribution of final balances from 100 simulations
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
@@ -513,7 +513,7 @@ cat("Expected Value (37 years): $", format(initial_balance * (1.05^37), big.mark
 ```{python}
 #| label: multiple-simulations-python
 #| fig-cap: Python distribution of final balances from 100 simulations
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -654,7 +654,7 @@ This analysis demonstrates why **expected value alone is insufficient** for inve
 ```{r}
 #| label: probability-analysis-r
 #| fig-cap: R probability analysis of final balances
-#| echo: true
+#| echo: false
 
 # Use the same simulation results from the previous analysis
 # (This assumes the previous code chunk was run)
@@ -703,7 +703,7 @@ print(prob_summary)
 ```{python}
 #| label: probability-analysis-python
 #| fig-cap: Python probability analysis of final balances
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -803,7 +803,7 @@ The probability analysis confirms that this is a **high-risk, high-volatility in
 ```{r}
 #| label: strategy-comparison-r
 #| fig-cap: R comparison of original vs modified game strategies
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
@@ -927,7 +927,7 @@ if (prob_modified_above_10000 > prob_original_above_10000) {
 ```{python}
 #| label: strategy-comparison-python
 #| fig-cap: Python comparison of original vs modified game strategies
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -1217,7 +1217,7 @@ Let's start with a basic coin flip simulation to understand the mechanics:
 ```{r}
 #| label: simple-sim-r
 #| fig-cap: R simulation of coin flip game
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 
@@ -1245,7 +1245,7 @@ sim_data
 ```{python}
 #| label: simple-sim-python
 #| fig-cap: Python simulation of coin flip game
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -1292,7 +1292,7 @@ Now let's simulate how an account balance changes over multiple periods:
 ```{r}
 #| label: timeseries-sim-r
 #| fig-cap: R time-series simulation of account balance
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
@@ -1357,7 +1357,7 @@ time_series_data
 ```{python}
 #| label: timeseries-sim-python
 #| fig-cap: Python time-series simulation of account balance
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
@@ -1427,7 +1427,7 @@ Let's see what the distribution of final balances looks like across many simulat
 ```{r}
 #| label: distribution-sim-r
 #| fig-cap: R probability distribution of final balances
-#| echo: true
+#| echo: false
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
@@ -1498,7 +1498,7 @@ summary_stats
 ```{python}
 #| label: distribution-sim-python
 #| fig-cap: Python probability distribution of final balances
-#| echo: true
+#| echo: false
 
 import numpy as np
 import pandas as pd
